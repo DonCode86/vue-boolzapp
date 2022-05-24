@@ -152,6 +152,7 @@ i {
     font-size: 11px;
     text-decoration: underline;
     color: #4f7485;
+    cursor: pointer;
 }
 
 .notifications-text {
@@ -198,6 +199,10 @@ i {
     cursor: pointer;
 }
 
+.contact:hover {
+    background-color: #e9ebeb;
+}
+
 .contact-info {
     display: flex;
     justify-content: space-between;
@@ -234,7 +239,7 @@ i {
     width: 300px;
     height: 100%;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 8px;
     position: relative;
 }
 
@@ -248,6 +253,7 @@ i {
 
 .chat-text {
     font-size: 14px;
+    font-weight: 400;
 }
 
 .time-chatbox {
