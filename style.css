@@ -213,6 +213,11 @@ i {
     font-weight: 400;
 }
 
+.contacts-list {
+    height: calc(100% - 150px);
+    overflow-y: auto;
+}
+
 
 /*------------------
     CHAT CONTAINER
