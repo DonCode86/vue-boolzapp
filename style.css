@@ -112,6 +112,40 @@ body {
 
 
 /*------------------
+    SEARCH-BAR
+------------------*/
+
+.search-bar-container {
+    display: flex;
+    padding: 5px;
+    background-color: #fafafa;
+    height: 45px;
+}
+
+.search-bar-input {
+    width: 100%;
+}
+
+.search-bar-input input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 1px solid #ebebeb;
+    padding-left: 10px;
+}
+
+.magnify {
+    width: 20%;
+    border: 1px solid #ebebeb;
+    color: #b1b1b1;
+    padding: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*------------------
     HEADER-RIGHT
 ------------------*/
 
