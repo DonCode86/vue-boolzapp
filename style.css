@@ -98,6 +98,21 @@ body {
     justify-content: center;
 }
 
+.notifications h2 {
+    font-size: 12px;
+}
+
+.notifications small {
+    font-size: 10px;
+    text-decoration: underline;
+    color: #4f7485;
+}
+
+.notifications-text {
+    margin-left: 10px;
+    line-height: 10px;
+}
+
 
 /*------------------
     HEADER-RIGHT
