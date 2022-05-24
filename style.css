@@ -235,6 +235,7 @@ i {
     height: 100%;
     padding: 20px;
     border-radius: 20px;
+    position: relative;
 }
 
 .my-msg {
@@ -247,6 +248,14 @@ i {
 
 .chat-text {
     font-size: 14px;
+}
+
+.time-chatbox {
+    position: absolute;
+    right: 7px;
+    bottom: 5px;
+    font-size: 12px;
+    color: rgb(184, 184, 184);
 }
 
 
@@ -272,4 +281,8 @@ i {
 .chat-input i {
     color: gray;
     padding: 0 15px;
+}
+
+.time-chatbox {
+    position: absolute;
 }
