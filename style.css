@@ -57,6 +57,10 @@ body {
     font-size: 11px;
 }
 
+i {
+    cursor: pointer;
+}
+
 
 /*------------------
     HEADER-LEFT
@@ -191,6 +195,7 @@ body {
     display: flex;
     border-top: 1px solid #ebebeb;
     padding: 5px 15px;
+    cursor: pointer;
 }
 
 .contact-info {

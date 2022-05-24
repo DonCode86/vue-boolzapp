@@ -13,119 +13,108 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <!-- LEFT COL-->
-        <div class="left-col">
-            <!-- HEADER -->
-            <div class="header-left">
-                <div class="user-account-img">
-                    <img class="user-img rounded-img" src="img/avatar_io.jpg" alt="my-photo">
-                    <span>Sofia</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><i class="fa-solid fa-power-off"></i></li>
-                    <li><i class="fa-solid fa-message"></i></li>
-                    <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                </ul>
-            </div>
-            <!-- NOTIFICATIONS -->
-            <div class="notifications">
-                <div class="bell rounded-img">
-                    <i class="fa-solid fa-bell-slash"></i>
-                </div>
-                <div class="notifications-text">
-                    <h2>Ricevi notifiche di nuovi messaggi</h2>
-                    <small>Attiva notifiche desktop</small>
-                </div>
-            </div>
-            <!-- SEARCH BAR -->
-            <div class="search-bar-container">
-                <div class="magnify">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="search-bar-input">
-                    <input class="input-bar" type="text" placeholder="Cerca o inizia una nuova chat">
-                </div>
-            </div>
-            <!-- CONTACTS LIST -->
-            <div class="contacts-list">
-                <!-- SINGLE CONTACT CARD-->
-                <div class="contact active-contact">
-                    <div class="contact-img">
-                        <img class="rounded-img" src="img/avatar_1.jpg" alt="avatar_1">
+    <div id="root">
+        <div class="container">
+            <!-- LEFT COL-->
+            <div class="left-col">
+                <!-- HEADER -->
+                <div class="header-left">
+                    <div class="user-account-img">
+                        <img class="user-img rounded-img" src="img/avatar_io.jpg" alt="my-photo">
+                        <span>Sofia</span>
                     </div>
-                    <div class="contact-info">
+                    <ul class="nav-menu">
+                        <li><i class="fa-solid fa-power-off"></i></li>
+                        <li><i class="fa-solid fa-message"></i></li>
+                        <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                    </ul>
+                </div>
+                <!-- NOTIFICATIONS -->
+                <div class="notifications">
+                    <div class="bell rounded-img">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="notifications-text">
+                        <h2>Ricevi notifiche di nuovi messaggi</h2>
+                        <small>Attiva notifiche desktop</small>
+                    </div>
+                </div>
+                <!-- SEARCH BAR -->
+                <div class="search-bar-container">
+                    <div class="magnify">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="search-bar-input">
+                        <input class="input-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+                <!-- CONTACTS LIST -->
+                <div class="contacts-list">
+                    <!-- SINGLE CONTACT CARD-->
+                    <div class="contact" v-for="(obj,index) in contacts">
+                        <div class="contact-img">
+                            <img class="rounded-img" :src="'img/avatar'+ obj.avatar +'.jpg'" alt="avatar_1">
+                        </div>
+                        <div class="contact-info">
+                            <div>
+                                <h4 class="contact-name">{{obj.name}}</h4>
+                                <small class="last-msg small-chat-text">Ultimo messaggio inviato</small>
+                            </div>
+                            <div class="timer">
+                                <small class="time small-chat-text">12:00</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT-COL -->
+            <div class="right-col">
+                <!-- HEADER RIGHT -->
+                <div class="header-right">
+                    <div class="user-account-img">
+                        <div class="contact-img">
+                            <img class="rounded-img" src="img/avatar_1.jpg" alt="avatar_1">
+                        </div>
                         <div>
                             <h4 class="contact-name">Michele</h4>
-                            <small class="last-msg small-chat-text">Ultimo messaggio inviato</small>
-                        </div>
-                        <div class="timer">
-                            <small class="time small-chat-text">12:00</small>
+                            <small>Ultimo accesso oggi alle 12:00</small>
                         </div>
                     </div>
+                    <ul class="nav-menu">
+                        <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                        <li><i class="fa-solid fa-paperclip"></i></li>
+                        <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                    </ul>
                 </div>
-                <!-- SINGLE CONTACT CARD-->
-                <div class="contact">
-                    <div class="contact-img">
-                        <img class="rounded-img" src="img/avatar_2.jpg" alt="avatar_1">
-                    </div>
-                    <div class="contact-info">
-                        <div>
-                            <h4 class="contact-name">Fabio</h4>
-                            <small class="last-msg small-chat-text">Ultimo messaggio inviato</small>
-                        </div>
-                        <div class="timer">
-                            <small class="time small-chat-text">12:00</small>
+                <!--CHAT CONTAINER-->
+                <div class="chat-container">
+                    <div class="row-my-msg">
+                        <div class="my-msg msg">
+                            <h3 class="chat-text">Ciao</h3>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- RIGHT-COL -->
-        <div class="right-col">
-            <!-- HEADER RIGHT -->
-            <div class="header-right">
-                <div class="user-account-img">
-                    <div class="contact-img">
-                        <img class="rounded-img" src="img/avatar_1.jpg" alt="avatar_1">
-                    </div>
-                    <div>
-                        <h4 class="contact-name">Michele</h4>
-                        <small>Ultimo accesso oggi alle 12:00</small>
+                    <div class="row-external-msg">
+                        <div class="external-msg msg">
+                            <h3 class="chat-text">Ciao</h3>
+                        </div>
                     </div>
                 </div>
-                <ul class="nav-menu">
-                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                    <li><i class="fa-solid fa-paperclip"></i></li>
-                    <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                </ul>
-            </div>
-            <!--CHAT CONTAINER-->
-            <div class="chat-container">
-                <div class="row-my-msg">
-                    <div class="my-msg msg">
-                        <h3 class="chat-text">Ciao</h3>
-                    </div>
+                <!--CHAT INPUT-->
+                <div class="chat-input">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input class="chat-input-bar input-bar" type="text" placeholder="Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone"></i>
                 </div>
-                <div class="row-external-msg">
-                    <div class="external-msg msg">
-                        <h3 class="chat-text">Ciao</h3>
-                    </div>
-                </div>
-            </div>
-            <!--CHAT INPUT-->
-            <div class="chat-input">
-                <i class="fa-regular fa-face-smile"></i>
-                <input class="chat-input-bar input-bar" type="text" placeholder="Scrivi un messaggio">
-                <i class="fa-solid fa-microphone"></i>
             </div>
         </div>
     </div>
     </div>
     <script src="main.js"></script>
+    <script src="contacts.js"></script>
 </body>
 
 </html>
