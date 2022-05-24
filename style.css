@@ -212,6 +212,36 @@ body {
     width: 100%;
     height: calc(100% - 95px);
     overflow-y: auto;
+    padding: 50px;
+}
+
+.row-my-msg {
+    display: flex;
+    justify-content: right;
+}
+
+.row-external-msg {
+    display: flex;
+    justify-content: left;
+}
+
+.msg {
+    width: 300px;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.my-msg {
+    background-color: #d5f9ba;
+}
+
+.external-msg {
+    background-color: white;
+}
+
+.chat-text {
+    font-size: 14px;
 }
 
 
