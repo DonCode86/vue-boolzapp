@@ -100,14 +100,14 @@ body {
 }
 
 .notifications small {
-    font-size: 10px;
+    font-size: 11px;
     text-decoration: underline;
     color: #4f7485;
 }
 
 .notifications-text {
     margin-left: 10px;
-    line-height: 10px;
+    line-height: 12px;
 }
 
 
@@ -119,7 +119,7 @@ body {
     display: flex;
     padding: 5px;
     background-color: #fafafa;
-    height: 45px;
+    height: 40px;
 }
 
 .search-bar-input {
@@ -132,6 +132,7 @@ body {
     outline: none;
     border: 1px solid #ebebeb;
     padding-left: 10px;
+    font-size: 11px;
 }
 
 .magnify {
@@ -142,6 +143,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 14px;
 }
 
 
