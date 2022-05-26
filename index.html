@@ -100,7 +100,7 @@
                 <!--CHAT INPUT-->
                 <div class="chat-input">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input v-model="newMessage" @keyup.enter="addMessage" class="chat-input-bar input-bar" type="text" placeholder="Scrivi un messaggio">
+                    <input v-model="newMessagesent" @keyup.enter="addMessage(currentIndex)" class="chat-input-bar input-bar" type="text" placeholder="Scrivi un messaggio">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
