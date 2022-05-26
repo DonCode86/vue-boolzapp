@@ -2,6 +2,7 @@ const app = new Vue({
     el: '#root',
     data: {
         currentIndex: 0,
+        newMessagesent: '',
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -162,6 +163,29 @@ const app = new Vue({
     methods: {
         selectedChat(index) {
             this.currentIndex = index;
+        },
+
+        addMessage(currentIndex) {
+            const newMessagesent = {
+                message: this.newMessagesent,
+                status: 'sent'
+            };
+            this.contacts[currentIndex].messages.push(newMessagesent);
+            this.newMessagesent = '';
+
+            setTimeout(() => {
+                const receivedMessage = {
+                    message: 'Ok!',
+                    status: 'received',
+                }
+                this.contacts[currentIndex].messages.push(receivedMessage);
+            }, 1000);
         }
-    }
+        // getLastMessageDate(contact) {
+        //     const mess = contact.message[contact.messages.length - 1];
+        //     return mess.date;
+        // }
+
+
+    },
 })
