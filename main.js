@@ -1,7 +1,10 @@
+var dateTime = luxon.DateTime;
+
 const app = new Vue({
     el: '#root',
     data: {
         currentIndex: 0,
+        search: "",
         newMessagesent: '',
         contacts: [{
                 name: 'Michele',
@@ -159,11 +162,27 @@ const app = new Vue({
         ]
     },
 
+    // computed: {
+    //     filteredCustomers() {
+    //         var self = this;
+    //         return this.contacts.filter((cust) => {
+    //             return cust.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 ||
+    //                 cust.message.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
+    //         })
+    //     }
+    // },
 
     methods: {
         selectedChat(index) {
             this.currentIndex = index;
         },
+
+        // getLastMessageHour(index) {
+        //     const DateTime = luxon.DateTime;
+        //     const mess = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+        //     return DateTime.fromFormat(mess.date, "dd/MM/yyyy HH:mm:ss").toFormat('HH:mm');
+        // },
+
 
         addMessage(currentIndex) {
             const newMessagesent = {
@@ -180,12 +199,15 @@ const app = new Vue({
                 }
                 this.contacts[currentIndex].messages.push(receivedMessage);
             }, 1000);
-        }
-        // getLastMessageDate(contact) {
-        //     const mess = contact.message[contact.messages.length - 1];
-        //     return mess.date;
-        // }
-
+        },
 
     },
+    computed: {
+        filter() {
+            this.search = this.search.toLowerCase();
+            return this.contacts.filter((elm) =>
+                elm.name.toLowerCase().includes(this.search));
+        }
+    }
+
 })

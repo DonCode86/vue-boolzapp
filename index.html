@@ -48,14 +48,14 @@
                     <div class="magnify">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <div class="search-bar-input">
-                        <input class="input-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <div class="search-bar-input" @submit.prevent="">
+                        <input v-model="search" class="input-bar" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
                 <!-- CONTACTS LIST -->
                 <div class="contacts-list">
                     <!-- SINGLE CONTACT CARD-->
-                    <div class="contact" v-for="(obj,index) in contacts" @click="selectedChat(index)">
+                    <div class="contact" v-for="(obj,index) in filter" @click="selectedChat(index)">
                         <div class="contact-img">
                             <img class="rounded-img" :src="'img/avatar'+ obj.avatar +'.jpg'" alt="avatar_1">
                         </div>
@@ -80,7 +80,7 @@
                             <img class="rounded-img" src="img/avatar_1.jpg" alt="avatar_1">
                         </div>
                         <div>
-                            <h4 class="contact-name">Michele</h4>
+                            <h4 class="contact-name">{{contacts[currentIndex].name}}</h4>
                             <small>Ultimo accesso oggi alle 12:00</small>
                         </div>
                     </div>
@@ -107,6 +107,7 @@
         </div>
     </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script>
     <script src="main.js"></script>
     <script src="contacts.js"></script>
 </body>
